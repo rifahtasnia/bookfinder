@@ -7,7 +7,7 @@ const Searchbar = (props) => {
                 <section className="col s6 offset-s3">
                     <form action="" onSubmit={props.handleSubmit}>
                         <div className='input-field'>
-                            <input placeholder="search for books" type="text" onChange={props.handleChange}></input>
+                            <input placeholder="Search for books" type="text" onChange={props.handleChange}></input>
                         </div>
                         <div className="col s6 offset-s3">
                             <select color="black" className="browser-default dropdown select-css" defaultValue="Sort" onChange={props.handleSort}>

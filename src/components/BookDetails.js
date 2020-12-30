@@ -12,7 +12,7 @@ const BookDetails = (props) => {
                     <div className="card horizontal">
                         <img className="activator"
                             src={props.location.image}
-                            style={{ width: "300", height: "800" }}
+                            style={{ height: "350px", width:"100%" }}
                         />
                         <div></div>
                         <span className="card-title">{props.location.title}</span>

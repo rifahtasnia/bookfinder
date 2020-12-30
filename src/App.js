@@ -9,7 +9,7 @@ const App = () => {
     const [searchTerm, setSearchTerm] = useState("");
     const [books, setBooks] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const [totalPages, setTotalPages] = useState(0);
+    const [totalPages, setTotalPages] = useState([]);
     const [sort, setSort] = useState("");
     let sortedBooks = [];
 
@@ -56,7 +56,7 @@ const App = () => {
 
     return (<div>
         <Navbar></Navbar>
-        <Searchbar handleChange={handleChange} handleSubmit={handleSubmit}></Searchbar>
+        <Searchbar handleChange={handleChange} handleSubmit={handleSubmit} handleSort={handleSort} sort={sort}></Searchbar>
         <BookList books={books} />
         {totalPages > 1 ? (
             <Pagination

@@ -27,8 +27,8 @@ const Pagination = (props) => {
     console.log(page_links)
 
     return (
-        <div className="container">
-            <div className="row">{page_links}</div>
+        <div className="pagination">
+            <div class="waves-effect">{page_links}</div>
         </div>
     )
 }
