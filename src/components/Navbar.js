@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <nav>
-      <div className="nav-wrapper" style={{ backgroundColor: "#2E9AFE" }}>
+      <div className="nav-wrapper" style={{ backgroundColor: "#F9966B" }}>
         <a href="#" className="brand-logo" style={{
           position: 'absolute', left: '42%', top: '65%',
           transform: 'translate(-50%, -50%)'

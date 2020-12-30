@@ -18,7 +18,7 @@ const App = () => {
         await getBooksByTerm(searchTerm, setBooks, currentPage, setTotalPages);
     }
     const handleChange = (event) => {
-        console.log(event.target.value)
+        //console.log(event.target.value)
         setSearchTerm(event.target.value);
     }
 
