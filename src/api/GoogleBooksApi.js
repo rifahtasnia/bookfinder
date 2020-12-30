@@ -1,35 +1,36 @@
-import axios from "axios";
 
-const GB_Api= axios.create({
-    baseURL:"https://www.googleapis.com/books"
-})
+import axios from 'axios';
 
-const getBooksByTerm = (SearchTerm,setBooks,pgNo,setTotalItems)=>
-{
-    GB_Api.get("/v1/volumes",{
-        params:{
+const APIKey = "AIzaSyDGpsXe_bc8ecdIE4v5nOW7mGXa16teUt0";
+
+
+const GoogleBooksAPI = axios.create({
+    baseURL: "https://www.googleapis.com/books/v1/volumes",
+});
+
+const getBooksByTerm = (SearchTerm, setBooks,  startIndex, setTotalPages) => {
+
+    console.log("Start Index "+ startIndex);
+    GoogleBooksAPI.get('', {
+        params: {
             q: SearchTerm,
-            key:"AIzaSyDGpsXe_bc8ecdIE4v5nOW7mGXa16teUt0",
-            startIndex: 20*pgNo,
-            maxResults: 20
-        }
-    },
-    ).then((response)=>
-    {
+            key: APIKey,
+            startIndex: startIndex,
+            maxResults: 12
+        },
+    }).then((response) => {
         console.log(response.data);
         setBooks(response.data.items);
-        setTotalItems(response.data.totalItems)
+        setTotalPages(Math.ceil(response.data.totalItems/20));
     })
-    
 }
 
 const getBookDetails = (book_id, setCurrentBook) => {
-    console.log(book_id);
-    GB_Api.get("/v1/volumes"+book_id)
+    GoogleBooksAPI.get(''+book_id)
         .then((response) => {
-            console.log(response.data);
+            console.log("book ", response.data);
             setCurrentBook(response.data);
         });
 }
 
-export {getBooksByTerm, getBookDetails};
+export  {getBooksByTerm, getBookDetails};

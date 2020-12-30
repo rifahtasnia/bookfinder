@@ -5,8 +5,8 @@ const Book = (props) => {
     const ImageURL = props.book.volumeInfo.imageLinks;
     return (
         <div className="col s12 m3">
-            <div className="card">
-                <div className="card-image" style={{marginBottom:10}}>
+            <div className="card large">
+                <div className="card-image" style={{ marginBottom: 10 }}>
                     {ImageURL === undefined ? (<img src={"https://picsum.photos/200/300"}
                         alt=""
                         style={{ width: "100", height: "100" }} />) :
@@ -15,17 +15,15 @@ const Book = (props) => {
                 </div>
                 <div>
                     <span className="card-title" style={{
-                        left: '50%',
-                        transform: 'translate(-50%, -50%)', 
                         color: "black",
-                        marginLeft: 10
+                        fontSize: 18,
+                        position: 'absolute', marginTop: 10, marginLeft: 15, marginRight: 15
                     }}>
                         {props.book.volumeInfo.title}
                     </span>
                 </div>
-                <div className="card-content" >
+                <div className="card-content"  style={{marginTop: 50, marginLeft: -6}}>
                     <p>{props.book.volumeInfo.authors}</p>
-                    <p>{props.book.volumeInfo.publishedDate}</p>
                 </div>
                 <div className="card-action" >
                     <Link to={{
