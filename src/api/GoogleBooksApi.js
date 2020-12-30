@@ -23,4 +23,13 @@ const getBooksByTerm = (SearchTerm,setBooks,pgNo,setTotalItems)=>
     
 }
 
-export {getBooksByTerm};
+const getBookDetails = (book_id, setCurrentBook) => {
+    console.log(book_id);
+    GB_Api.get("/v1/volumes"+book_id)
+        .then((response) => {
+            console.log(response.data);
+            setCurrentBook(response.data);
+        });
+}
+
+export {getBooksByTerm, getBookDetails};

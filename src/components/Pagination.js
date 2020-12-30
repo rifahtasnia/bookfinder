@@ -27,7 +27,7 @@ const Pagination = (props) => {
     console.log(page_links)
 
     return (
-        <div className="container" style={{marginTop:20, marginBottom:10}}>
+        <div className="container">
             <div className="row">{page_links}</div>
         </div>
     )
