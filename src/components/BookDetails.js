@@ -9,16 +9,14 @@ const BookDetails = (props) => {
             <Navbar></Navbar>
             <div className="row">
                 <div className="col s12 m7">
-                    <div className="card horizontal">
-                        <img className="activator"
+                    <div className="card large horizontal">
+                        <img className="card-image"
                             src={props.location.image}
-                            style={{ height: "350px", width:"100%" }}
+                            style={{ height: "450px", width: "70%" }}
                         />
-                        <div></div>
-                        <span className="card-title">{props.location.title}</span>
-                        <div></div>
 
                         <div className="card-content">
+                        <p style={{ fontSize:30 }}>{props.location.title}</p>
                             <p style={{ fontSize:20 }}>Author: {props.location.author}</p>
                             <p style={{ fontSize:15 }}>Published: {props.location.published}</p>
                             <p>{props.location.description}</p>

@@ -9,9 +9,9 @@ const Book = (props) => {
                 <div className="card-image" style={{ marginBottom: 10 }}>
                     {ImageURL === undefined ? (<img src={"https://picsum.photos/200/300"}
                         alt=""
-                        style={{ width: "100", height: "100" }} />) :
+                        style={{ width: "100", height: "100"}} />) :
                         (<img src={props.book.volumeInfo.imageLinks.thumbnail}
-                            style={{ width: "220px", height: "300px" }} />)}
+                            style={{ width: "220px", height: "300px"}} />)}
                 </div>
                 <div>
                     <span className="card-title" style={{
@@ -24,6 +24,8 @@ const Book = (props) => {
                 </div>
                 <div className="card-content"  style={{marginTop: 50, marginLeft: -6}}>
                     <p>{props.book.volumeInfo.authors}</p>
+                    <p>{props.book.volumeInfo.published}</p>
+                    <p>{props.book.volumeInfo.published}</p>
                 </div>
                 <div className="card-action" >
                     <Link to={{

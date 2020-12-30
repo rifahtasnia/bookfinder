@@ -1,8 +1,6 @@
-
 import axios from 'axios';
 
 const APIKey = "AIzaSyDGpsXe_bc8ecdIE4v5nOW7mGXa16teUt0";
-
 
 const GoogleBooksAPI = axios.create({
     baseURL: "https://www.googleapis.com/books/v1/volumes",
@@ -28,7 +26,7 @@ const getBooksByTerm = (SearchTerm, setBooks,  startIndex, setTotalPages) => {
 const getBookDetails = (book_id, setCurrentBook) => {
     GoogleBooksAPI.get(''+book_id)
         .then((response) => {
-            console.log("book ", response.data);
+            console.log(response.data);
             setCurrentBook(response.data);
         });
 }

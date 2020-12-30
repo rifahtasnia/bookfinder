@@ -1,13 +1,13 @@
 import React from 'react';
 
-const SearchBar = (props) => {
+const Searchbar = (props) => {
     return (
         <div className="container">
             <div className='row'>
                 <section className="col s6 offset-s3">
                     <form action="" onSubmit={props.handleSubmit}>
                         <div className='input-field'>
-                            <input placeholder="search for books" type="text" onChange={props.handleChange}></input>
+                            <input placeholder="Search for books" type="text" onChange={props.handleChange}></input>
                         </div>
                         <button type='submit' className="btn btn-danger" style={{ backgroundColor: "#F9966B", width: "100px", height: "42px", marginLeft: 70}}>
                             Search
@@ -30,4 +30,4 @@ const SearchBar = (props) => {
     )
 }
 
-export default SearchBar;
+export default Searchbar;
